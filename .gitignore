@@ -1,0 +1,14 @@
+.vs/
+x64/Debug/RetroPool.exe
+RetroPool/x64/Debug/main.obj
+RetroPool/x64/Debug/Player.obj
+RetroPool/x64/Debug/RetroPool.ilk
+RetroPool/x64/Debug/RetroPool.log
+RetroPool/x64/Debug/SimpleFollow.obj
+RetroPool/x64/Debug/vc143.idb
+RetroPool/x64/Debug/vc143.pdb
+RetroPool/x64/Debug/RetroPool.tlog/CL.command.1.tlog
+RetroPool/x64/Debug/RetroPool.tlog/CL.read.1.tlog
+RetroPool/x64/Debug/RetroPool.tlog/CL.write.1.tlog
+RetroPool/x64/Debug/RetroPool.tlog/link.read.1.tlog
+x64/Debug/RetroPool.pdb
