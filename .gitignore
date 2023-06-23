@@ -45,3 +45,4 @@ RetroPool/x64/Debug/TileBoard.obj
 RetroPool/x64/Debug/TilePicker.obj
 RetroPool/x64/Debug/vc.nativecodeanalysis.all.xml
 RetroPool/x64/Debug/RetroPool.tlog/link.command.1.tlog
+*.obj
