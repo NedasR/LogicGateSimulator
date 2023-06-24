@@ -3,9 +3,10 @@
 struct Pin
 {
 	bool state;
-	Pin* nextpin;
 
-	Gate* hookedpin;
+	Pin * nextpin;
+
+	Gate * hookedpin;
 
 	void UpdateState(bool State);
 };

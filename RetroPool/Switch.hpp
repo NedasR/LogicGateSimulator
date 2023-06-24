@@ -6,14 +6,15 @@
 
 class Switch : public Gate
 {
+	sf::Vector2f Loc;
 	GateDrawable shape;
+	PinDrawable pinOut;
 
 	Pin output;
 
-	
+	bool state;
 
 public:
-	bool state;
 
 	Switch();
 
