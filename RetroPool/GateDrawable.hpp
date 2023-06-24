@@ -8,5 +8,7 @@ public:
 
 	void GateText();
 
-	void Gatesize(float width = 60.f, float height = 60.f);
+	void Gatesize(float width = 40.f, float height = 40.f);
+
+	void GateColor(sf::Color color = sf::Color(38, 34, 34));
 };

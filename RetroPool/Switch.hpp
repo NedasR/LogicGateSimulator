@@ -10,11 +10,14 @@ class Switch : public Gate
 
 	Pin output;
 
-	bool Button;
+	
 
 public:
+	bool state;
 
 	Switch();
+
+	void Switchclicked();
 
 	void notifey();
 

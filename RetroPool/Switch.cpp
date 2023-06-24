@@ -2,12 +2,25 @@
 Switch::Switch()
 {
 	shape.Gatesize();
-	Button = false;
+	shape.GateColor();
+	state = false;
+}
+
+void Switch::Switchclicked()
+{
+	if (state == false) 
+	{
+		state = true;
+	}
+	else {
+		state = false;
+	}
+	
 }
 
 void Switch::notifey()
 {
-	output.UpdateState(Button);
+	output.UpdateState(state);
 }
 
 void Switch::drawGate(sf::RenderWindow &window) 
