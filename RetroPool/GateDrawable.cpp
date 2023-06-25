@@ -34,6 +34,14 @@ void GateDrawable::GatePos(float PositionX, float PositionY)
 	GateShape.setPosition(PositionX, PositionY);
 }
 
+void GateDrawable::GateTexture(std::string texturepath,sf::IntRect Rect)
+{
+	Tex.loadFromFile(texturepath);
+	GateShape.setTexture(&Tex);
+	GateShape.setFillColor(sf::Color::White);
+	GateShape.setTextureRect(Rect);
+}
+
 sf::Vector2f GateDrawable::getGateSize()
 {
 	return GateShape.getSize();

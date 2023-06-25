@@ -4,24 +4,22 @@
 #include "GateDrawable.hpp"
 #include <SFML/Graphics.hpp>
 
-class Switch : public Gate
+class Light : public Gate
 {
 	sf::Vector2f Loc;
 	GateDrawable shape;
-	PinDrawable pinOut;
-
+	PinDrawable inputAdraw;
 
 	bool state;
-
-	Pin output;
+	Pin inputA;
 
 public:
 
-	Switch();
-
-	void Switchclicked();
+	Light();
 
 	void notifey();
 
-	void drawGate(sf::RenderWindow &window);
+	void drawGate(sf::RenderWindow& window);
+
+	void LightPowerd(bool &OnOROFF);
 };

@@ -8,6 +8,7 @@ int main()
     bool filp, held;
     filp = held = false;
     Switch button;
+    Light light;
     while (window.isOpen())
     {
         sf::Event event;
@@ -17,9 +18,23 @@ int main()
                 window.close();
             
         }
-        
+        if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
+
+            if (held) {
+                held = false;
+            }
+            else {
+                held = true;
+            }
+
+
+            light.LightPowerd(held);
+
+        }
+
         window.clear();
         button.drawGate(window);
+        light.drawGate(window);
         window.display();
     }
 

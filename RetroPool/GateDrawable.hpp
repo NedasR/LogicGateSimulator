@@ -4,6 +4,7 @@
 #define GATE_SIZEs 40.f
 class GateDrawable
 {
+	sf::Texture Tex;
 	sf::Font Tfont;
 public:
 	sf::RectangleShape GateShape;
@@ -18,6 +19,8 @@ public:
 	void GatePos(sf::Vector2f Position);
 
 	void GatePos(float PositionX,float PositionY);
+
+	void GateTexture(std::string texturepath,sf::IntRect Rect);
 
 	sf::Vector2f getGateSize();
 };
