@@ -1,7 +1,6 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#define TEXT_SIZE 13
 #define GATE_SIZEs 40.f
 class GateDrawable
 {
@@ -35,4 +34,6 @@ public:
 	void PinPos(sf::Vector2f Position);
 
 	void PinPos(float PositionX, float PositionY);
+
+	sf::Vector2f getPinSize();
 };

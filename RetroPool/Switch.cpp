@@ -7,8 +7,8 @@ Switch::Switch()
 	shape.Gatesize();
 	shape.GateColor();
 	shape.GateText("switch");
-	pinOut.PinPos(Loc.x + (shape.getGateSize().x / 2) - 4, Loc.y - 6);
-	pinOut.Pinsize();
+	pinOut.Pinsize(shape.getGateSize().x / 6.8, shape.getGateSize().y / 6.8);
+	pinOut.PinPos(Loc.x + (shape.getGateSize().x / 2 ) - pinOut.getPinSize().x / 2 , Loc.y - pinOut.getPinSize().y);
 	pinOut.PinColor();
 	state = false;
 }

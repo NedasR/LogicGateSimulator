@@ -7,7 +7,7 @@ void GateDrawable::GateText(std::string TEXT)
 	{
 		std::cout << "font faild to load" << std::endl;
 	}
-	text.setCharacterSize(TEXT_SIZE);
+	text.setCharacterSize(GateShape.getSize().x / 3);
 	text.setFont(Tfont);
 	text.setString(TEXT);
 	text.setPosition(GateShape.getPosition().x + GateShape.getSize().x / 2 - text.getLocalBounds().width/2,
@@ -62,4 +62,9 @@ void PinDrawable::PinPos(sf::Vector2f Position)
 void PinDrawable::PinPos(float PositionX, float PositionY)
 {
 	Pinshape.setPosition(PositionX, PositionY);
+}
+
+sf::Vector2f PinDrawable::getPinSize()
+{
+	return Pinshape.getSize();
 }
