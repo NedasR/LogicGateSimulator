@@ -10,10 +10,9 @@ class Light : public Gate
 	GateDrawable shape;
 	PinDrawable inputAdraw;
 
+public:
 	bool state;
 	Pin inputA;
-
-public:
 
 	Light();
 
@@ -21,5 +20,9 @@ public:
 
 	void drawGate(sf::RenderWindow& window);
 
-	void LightPowerd(bool &OnOROFF);
+	void LightPowerd();
+
+	void move(int lx, int ly);
+
+	void clickupdate(sf::Vector2f pos);
 };

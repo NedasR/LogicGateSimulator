@@ -23,6 +23,8 @@ public:
 	void GateTexture(std::string texturepath,sf::IntRect Rect);
 
 	sf::Vector2f getGateSize();
+
+	void LoadFont(std::string Font = "assets/arial.ttf");
 };
 
 class PinDrawable
@@ -39,4 +41,7 @@ public:
 	void PinPos(float PositionX, float PositionY);
 
 	sf::Vector2f getPinSize();
+
+	bool isClicked(sf::Vector2f pos);
+
 };

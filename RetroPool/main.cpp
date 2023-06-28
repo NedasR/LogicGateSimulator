@@ -1,14 +1,18 @@
 #include <SFML/Graphics.hpp>
 #include "AllhppFiles.hpp"
 #include <iostream>
+#include <vector>
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(1200, 800), "Coffie's game");
     bool filp, held;
     filp = held = false;
-    Switch button;
-    Light light;
+    int objectcount = 0;
+    std::vector<Gate*> gates;
+    Gate* light = new Light();
+    gates.push_back(light);
+
     while (window.isOpen())
     {
         sf::Event event;
@@ -16,27 +20,69 @@ int main()
         {
             if (event.type == sf::Event::Closed)
                 window.close();
-            
-        }
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
+            if (event.type == sf::Event::KeyPressed)
+            {
+                if (event.key.code == sf::Keyboard::S)
+                {
+                    Gate* Switchptr = new Switch();
+                    //Switchptr->move(std::rand()%1200-40,std::rand()%800-40);
+                    gates.push_back(Switchptr);
+                }
+            }
+            if (event.type == sf::Event::MouseButtonPressed)
+            {
+                if (event.mouseButton.button == sf::Mouse::Left)
+                    
+                {
+                    for (Gate* gate : gates)
+                    {
+                        gate->clickupdate(sf::Vector2f(event.mouseButton.x, event.mouseButton.y));
 
-            if (held) {
-                held = false;
+
+
+
+                        //Switch* a = (Switch*)gate;
+                        Switch* a = dynamic_cast<Switch*>(gate);
+                        if (a == nullptr) {
+                           //std::cout << "nullptr" << std::endl;
+                        }
+                        else {
+                            a->Switchclicked(event.mouseButton);
+                            Pin::head = &a->output;
+                            Pin::head->state = a->state;
+                            
+                        }
+
+                    }
+                }
+            }
+        }
+        for (Gate* gate : gates)
+        {
+            Light* Lights = dynamic_cast<Light*>(gate);
+            if (Lights == nullptr)
+            {
+
             }
             else {
-                held = true;
+                Lights->LightPowerd();
+                if (Pin::head != nullptr) {
+                    Pin::head->nextpin = &Lights->inputA;
+                    Lights->state = Pin::head->nextpin->state;
+                }
             }
+        }
+        if (Pin::head != nullptr) {
 
-
-            light.LightPowerd(held);
-
+            Pin::head->nextpin->state = Pin::head->state;
         }
 
         window.clear();
-        button.drawGate(window);
-        light.drawGate(window);
+        for (Gate* gate : gates) 
+        {
+            gate->drawGate(window);
+        }
         window.display();
     }
-
     return 0;
 }

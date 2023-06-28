@@ -11,17 +11,22 @@ class Switch : public Gate
 	PinDrawable pinOut;
 
 
-	bool state;
 
-	Pin output;
 
 public:
+	bool state;
+    Pin output;
+
 
 	Switch();
 
-	void Switchclicked();
+	void Switchclicked(const sf::Event::MouseButtonEvent& mouseEvent);
 
 	void notifey();
 
 	void drawGate(sf::RenderWindow &window);
+
+	void move(int Px, int Py);
+
+	void clickupdate(sf::Vector2f pos);
 };

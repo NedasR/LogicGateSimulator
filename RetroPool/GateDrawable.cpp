@@ -3,10 +3,6 @@
 
 void GateDrawable::GateText(std::string TEXT)
 {
-	if (!(Tfont.loadFromFile("assets/arial.ttf")))
-	{
-		std::cout << "font faild to load" << std::endl;
-	}
 	text.setCharacterSize(GateShape.getSize().x / 3);
 	text.setFont(Tfont);
 	text.setString(TEXT);
@@ -75,4 +71,23 @@ void PinDrawable::PinPos(float PositionX, float PositionY)
 sf::Vector2f PinDrawable::getPinSize()
 {
 	return Pinshape.getSize();
+}
+
+bool PinDrawable::isClicked(sf::Vector2f pos)
+{
+	sf::FloatRect click (Pinshape.getPosition(), Pinshape.getSize());
+		if (click.contains(pos))
+		{
+
+			return true;
+		}
+		return false;
+}
+
+void GateDrawable::LoadFont(std::string Font)
+{
+	if (!(Tfont.loadFromFile(Font)))
+	{
+		std::cout << "font faild to load" << std::endl;
+	}
 }

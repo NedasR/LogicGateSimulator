@@ -1,7 +1,8 @@
 #include "Pin.hpp"
 
+Pin* Pin::head;
 
-void Pin::UpdateState(bool State)
+void Pin::UpdateState(bool& State)
 {
 	state = State;
 	if (nextpin != nullptr)
