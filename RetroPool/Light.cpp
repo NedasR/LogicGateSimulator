@@ -41,18 +41,22 @@ void Light::LightPowerd()
 	}
 }
 
-void Light::move(int lx, int ly)
+void Light::moveupdate(sf::Vector2f pos)
 {
-	Loc.x = lx;
-	Loc.y = ly;
-	shape.GatePos(Loc);
+	if (shape.isHeld(pos))
+	{
+		Loc.x = pos.x - shape.getGateSize().x / 2;
+		Loc.y = pos.y - shape.getGateSize().y / 2;
+		shape.GatePos(Loc);
+		inputAdraw.PinPos(Loc.x + (shape.getGateSize().x / 2) - inputAdraw.getPinSize().x / 2, Loc.y + shape.getGateSize().y);
+	}
+	
 }
 
 void Light::clickupdate(sf::Vector2f pos)
 {
 	if (inputAdraw.isClicked(pos))
 	{
-		Pin::head = &inputA;
-		std::cout << "head is at now at " << Pin::head << std::endl;
+		Pin::onclick(&inputA);
 	}
 }

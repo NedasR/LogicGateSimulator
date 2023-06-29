@@ -6,6 +6,8 @@ class GateDrawable
 {
 	sf::Texture Tex;
 	sf::Font Tfont;
+	bool isheld;
+	sf::Vector2f Offset;
 public:
 	sf::RectangleShape GateShape;
 	sf::Text text;
@@ -25,6 +27,8 @@ public:
 	sf::Vector2f getGateSize();
 
 	void LoadFont(std::string Font = "assets/arial.ttf");
+
+	bool isHeld(sf::Vector2f pos);
 };
 
 class PinDrawable

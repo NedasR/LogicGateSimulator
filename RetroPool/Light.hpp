@@ -22,7 +22,7 @@ public:
 
 	void LightPowerd();
 
-	void move(int lx, int ly);
+	void moveupdate(sf::Vector2f pos);
 
 	void clickupdate(sf::Vector2f pos);
 };

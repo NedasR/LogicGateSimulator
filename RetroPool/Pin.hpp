@@ -19,4 +19,7 @@ struct Pin
 	Gate * hookedpin;
 
 	void UpdateState(bool& State);
+
+	static void onclick(Pin* pin);
 };
+

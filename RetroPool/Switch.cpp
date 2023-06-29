@@ -54,20 +54,21 @@ void Switch::drawGate(sf::RenderWindow &window)
 	window.draw(pinOut.Pinshape);
 }
 
-void Switch::move(int Px, int Py)
+void Switch::moveupdate(sf::Vector2f pos)
 {
-	Loc.x = Px;
-	Loc.y = Py;
-	shape.GatePos(Loc);
-	pinOut.PinPos(Loc.x + (shape.getGateSize().x / 2) - pinOut.getPinSize().x / 2, Loc.y - pinOut.getPinSize().y);
-	shape.GateText("switch");
+	if (shape.isHeld(pos)) {
+		Loc.x = pos.x - shape.getGateSize().x / 2;
+		Loc.y = pos.y - shape.getGateSize().y / 2;
+		shape.GatePos(Loc);
+		pinOut.PinPos(Loc.x + (shape.getGateSize().x / 2) - pinOut.getPinSize().x / 2, Loc.y - pinOut.getPinSize().y);
+		shape.GateText("switch");
+	}
 }
 
 void Switch::clickupdate(sf::Vector2f pos)
 {
 	if (pinOut.isClicked(pos))
 	{
-		Pin::head = &output;
-		std::cout << "head is at now at " << Pin::head << std::endl;
+		Pin::onclick(&output);
 	}
 }

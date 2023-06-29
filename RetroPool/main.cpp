@@ -34,9 +34,11 @@ int main()
                 if (event.mouseButton.button == sf::Mouse::Left)
                     
                 {
+                    sf::Vector2f mouse(event.mouseButton.x, event.mouseButton.y);
                     for (Gate* gate : gates)
                     {
                         gate->clickupdate(sf::Vector2f(event.mouseButton.x, event.mouseButton.y));
+                        
 
 
 
@@ -48,34 +50,37 @@ int main()
                         }
                         else {
                             a->Switchclicked(event.mouseButton);
+                            /*
                             Pin::head = &a->output;
                             Pin::head->state = a->state;
-                            
+                            */
                         }
 
                     }
                 }
             }
         }
+
         for (Gate* gate : gates)
         {
-            Light* Lights = dynamic_cast<Light*>(gate);
-            if (Lights == nullptr)
+            if (gate == nullptr)
             {
-
             }
-            else {
-                Lights->LightPowerd();
+            else if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+                gate->moveupdate(static_cast<sf::Vector2f>(sf::Mouse::getPosition(window)));
+                
+                /*
                 if (Pin::head != nullptr) {
                     Pin::head->nextpin = &Lights->inputA;
                     Lights->state = Pin::head->nextpin->state;
-                }
+                }*/
             }
         }
+        /*
         if (Pin::head != nullptr) {
 
             Pin::head->nextpin->state = Pin::head->state;
-        }
+        }*/
 
         window.clear();
         for (Gate* gate : gates) 

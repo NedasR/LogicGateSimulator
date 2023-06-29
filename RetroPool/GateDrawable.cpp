@@ -91,3 +91,14 @@ void GateDrawable::LoadFont(std::string Font)
 		std::cout << "font faild to load" << std::endl;
 	}
 }
+
+bool GateDrawable::isHeld(sf::Vector2f pos)
+{
+	sf::FloatRect click(GateShape.getPosition(), GateShape.getSize());
+	if (click.contains(pos))
+	{
+		
+		return true;
+	}
+	return false;
+}
