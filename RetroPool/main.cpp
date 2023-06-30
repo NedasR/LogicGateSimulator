@@ -49,8 +49,9 @@ int main()
                            //std::cout << "nullptr" << std::endl;
                         }
                         else {
-                            a->Switchclicked(event.mouseButton);
+                            a->Switchclicked(event.mouseButton);\
                             /*
+                            
                             Pin::head = &a->output;
                             Pin::head->state = a->state;
                             */
@@ -81,6 +82,7 @@ int main()
 
             Pin::head->nextpin->state = Pin::head->state;
         }*/
+
 
         window.clear();
         for (Gate* gate : gates) 

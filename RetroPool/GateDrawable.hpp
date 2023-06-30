@@ -6,8 +6,10 @@ class GateDrawable
 {
 	sf::Texture Tex;
 	sf::Font Tfont;
-	bool isheld;
 	sf::Vector2f Offset;
+
+	bool m_isHeld;
+	static bool onHold;
 public:
 	sf::RectangleShape GateShape;
 	sf::Text text;

@@ -1,6 +1,8 @@
 #include "GateDrawable.hpp"
 
 
+bool GateDrawable::onHold = true;
+
 void GateDrawable::GateText(std::string TEXT)
 {
 	text.setCharacterSize(GateShape.getSize().x / 3);
@@ -43,6 +45,35 @@ sf::Vector2f GateDrawable::getGateSize()
 	return GateShape.getSize();
 }
 
+void GateDrawable::LoadFont(std::string Font)
+{
+	if (!(Tfont.loadFromFile(Font)))
+	{
+		std::cout << "font faild to load" << std::endl;
+	}
+}
+
+bool GateDrawable::isHeld(sf::Vector2f pos)
+{
+	sf::FloatRect click(GateShape.getPosition(), GateShape.getSize());
+	std::cout << "m_isHeld: " << m_isHeld << "onHold: " << onHold << std::endl;
+	if (click.contains(pos))
+	{
+		if (onHold || m_isHeld)
+		{
+			m_isHeld = true;
+			onHold = false;
+
+			return true;
+		}
+	}
+	else if (m_isHeld)
+	{
+		m_isHeld = false;
+		onHold = true;
+	}
+	return false;
+}
 
 
 
@@ -84,21 +115,3 @@ bool PinDrawable::isClicked(sf::Vector2f pos)
 		return false;
 }
 
-void GateDrawable::LoadFont(std::string Font)
-{
-	if (!(Tfont.loadFromFile(Font)))
-	{
-		std::cout << "font faild to load" << std::endl;
-	}
-}
-
-bool GateDrawable::isHeld(sf::Vector2f pos)
-{
-	sf::FloatRect click(GateShape.getPosition(), GateShape.getSize());
-	if (click.contains(pos))
-	{
-		
-		return true;
-	}
-	return false;
-}
