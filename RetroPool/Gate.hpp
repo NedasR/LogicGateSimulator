@@ -7,5 +7,6 @@ public:
 	virtual void drawGate(sf::RenderWindow &window) = 0;
 	virtual void moveupdate(sf::Vector2f pos) = 0;
 	virtual void clickupdate(sf::Vector2f pos) = 0;
+	virtual void lineUpdate() = 0;
 
 };

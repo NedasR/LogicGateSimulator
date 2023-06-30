@@ -51,6 +51,10 @@ void Switch::drawGate(sf::RenderWindow &window)
 {
 	window.draw(shape.GateShape);
 	window.draw(shape.text);
+	if (output.type != Pintype::Input && output.nextpin != nullptr)
+	{
+		window.draw(pinOut.Line);
+	}
 	window.draw(pinOut.Pinshape);
 }
 
@@ -70,5 +74,24 @@ void Switch::clickupdate(sf::Vector2f pos)
 	if (pinOut.isClicked(pos))
 	{
 		Pin::onclick(&output);
+	}
+}
+
+void Switch::lineUpdate()
+{
+	output.updateLoc(pinOut.Pinshape);
+	pinOut.Line.setPosition(output.Loc.x + pinOut.getPinSize().x / 2 + pinOut.Line.getSize().x / 2,
+							output.Loc.y + pinOut.getPinSize().x / 2);
+	if (output.nextpin == nullptr)
+	{
+
+	}
+	else
+	{
+		float angle = output.calculateAngle(output.Loc, output.nextpin->Loc);
+		float lineLength = output.calculateLineDist(output.Loc, output.nextpin->Loc);
+		pinOut.Line.setRotation(angle);
+		pinOut.Line.setSize(sf::Vector2f(4,lineLength+2));
+		pinOut.Line.setFillColor(sf::Color::White);
 	}
 }

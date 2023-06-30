@@ -11,8 +11,6 @@ class Switch : public Gate
 	PinDrawable pinOut;
 
 
-
-
 public:
 	bool state;
     Pin output;
@@ -29,4 +27,6 @@ public:
 	void moveupdate(sf::Vector2f pos);
 
 	void clickupdate(sf::Vector2f pos);
+
+	void lineUpdate();
 };

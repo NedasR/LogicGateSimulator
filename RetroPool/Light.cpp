@@ -60,3 +60,8 @@ void Light::clickupdate(sf::Vector2f pos)
 		Pin::onclick(&inputA);
 	}
 }
+
+void Light::lineUpdate()
+{
+	inputA.updateLoc(inputAdraw.Pinshape);
+}

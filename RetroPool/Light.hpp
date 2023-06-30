@@ -3,7 +3,6 @@
 #include "Pin.hpp"
 #include "GateDrawable.hpp"
 #include <SFML/Graphics.hpp>
-
 class Light : public Gate
 {
 	sf::Vector2f Loc;
@@ -11,6 +10,7 @@ class Light : public Gate
 	PinDrawable inputAdraw;
 
 public:
+	
 	bool state;
 	Pin inputA;
 
@@ -25,4 +25,6 @@ public:
 	void moveupdate(sf::Vector2f pos);
 
 	void clickupdate(sf::Vector2f pos);
+
+	void lineUpdate();
 };

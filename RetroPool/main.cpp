@@ -38,7 +38,6 @@ int main()
                     for (Gate* gate : gates)
                     {
                         gate->clickupdate(sf::Vector2f(event.mouseButton.x, event.mouseButton.y));
-                        
 
 
 
@@ -69,7 +68,6 @@ int main()
             }
             else if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
                 gate->moveupdate(static_cast<sf::Vector2f>(sf::Mouse::getPosition(window)));
-                
                 /*
                 if (Pin::head != nullptr) {
                     Pin::head->nextpin = &Lights->inputA;
@@ -87,9 +85,24 @@ int main()
         window.clear();
         for (Gate* gate : gates) 
         {
+            gate->lineUpdate();
             gate->drawGate(window);
         }
         window.display();
     }
     return 0;
 }
+
+/*
+TO DO LIST
+//////// make functionality where when i connect pins it draw's line from on pin to the next pin
+make rectangle in pin drawble which will be the line we will be drawing
+--in pindrawable make a method where it returns pin Pos
+make a pure fucntion in gate where it will update where the line points to if gate is moved or connected for the first time
+make Loc varibale in Pin and make a updateLoc in Pin make an argument of pindawable by reference
+
+
+
+////////
+
+*/

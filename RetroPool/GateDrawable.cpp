@@ -56,7 +56,6 @@ void GateDrawable::LoadFont(std::string Font)
 bool GateDrawable::isHeld(sf::Vector2f pos)
 {
 	sf::FloatRect click(GateShape.getPosition(), GateShape.getSize());
-	std::cout << "m_isHeld: " << m_isHeld << "onHold: " << onHold << std::endl;
 	if (click.contains(pos))
 	{
 		if (onHold || m_isHeld)
@@ -77,6 +76,12 @@ bool GateDrawable::isHeld(sf::Vector2f pos)
 
 
 
+
+PinDrawable::PinDrawable()
+{
+	Line.setSize(sf::Vector2f(LINE_WIDTH, LINE_WIDTH));
+	Line.setOrigin(sf::Vector2f(LINE_WIDTH / 2, LINE_WIDTH));
+}
 
 
 void PinDrawable::Pinsize(float width, float height)

@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #define GATE_SIZEs 40.f
+#define LINE_WIDTH 4
 class GateDrawable
 {
 	sf::Texture Tex;
@@ -37,6 +38,8 @@ class PinDrawable
 {
 public:
 	sf::RectangleShape Pinshape;
+	sf::RectangleShape Line;
+	PinDrawable();
 
 	void Pinsize(float width = 6.f, float height = 6.f);
 
@@ -49,5 +52,7 @@ public:
 	sf::Vector2f getPinSize();
 
 	bool isClicked(sf::Vector2f pos);
+
+	sf::Vector2f getPinPos() {return Pinshape.getPosition();}
 
 };
