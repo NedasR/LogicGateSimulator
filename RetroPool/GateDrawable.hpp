@@ -41,6 +41,8 @@ public:
 	sf::RectangleShape Line;
 	PinDrawable();
 
+	sf::Color stateLineColor(bool state, sf::Color NegitveColor = sf::Color::White, sf::Color PositiveColor = sf::Color(15, 83, 191));
+
 	void Pinsize(float width = 6.f, float height = 6.f);
 
 	void PinColor(sf::Color color = sf::Color(173, 169, 168));

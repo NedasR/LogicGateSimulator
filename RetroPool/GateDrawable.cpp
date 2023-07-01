@@ -83,6 +83,18 @@ PinDrawable::PinDrawable()
 	Line.setOrigin(sf::Vector2f(LINE_WIDTH / 2, 0));
 }
 
+sf::Color PinDrawable::stateLineColor(bool state, sf::Color NegitveColor, sf::Color PositiveColor)
+{
+	if (state)
+	{
+		return PositiveColor;
+	}
+	else 
+	{
+		return NegitveColor;
+	}
+}
+
 
 void PinDrawable::Pinsize(float width, float height)
 {

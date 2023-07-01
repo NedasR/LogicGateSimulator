@@ -47,6 +47,7 @@ void AndGate::drawGate(sf::RenderWindow& window)
 	window.draw(pinOut.Pinshape);
 	if (output.type != Pintype::Input && output.nextpin != nullptr)
 	{
+		pinOut.Line.setFillColor(pinOut.stateLineColor(state));
 		window.draw(pinOut.Line);
 	}
 	window.draw(pinOut.Pinshape);

@@ -56,6 +56,7 @@ void Switch::drawGate(sf::RenderWindow &window)
 	window.draw(shape.text);
 	if (output.type != Pintype::Input && output.nextpin != nullptr)
 	{
+		pinOut.Line.setFillColor(pinOut.stateLineColor(state));
 		window.draw(pinOut.Line);
 	}
 	window.draw(pinOut.Pinshape);
