@@ -39,6 +39,12 @@
     <ClCompile Include="AndGate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ORGate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NotGate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Gate.hpp">
@@ -63,6 +69,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AndGate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ORGate.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="NotGate.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

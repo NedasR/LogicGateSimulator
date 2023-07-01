@@ -1,6 +1,8 @@
 #include <SFML/Graphics.hpp>
 #include "AllhppFiles.hpp"
 #include "AndGate.hpp"
+#include "ORGate.hpp"
+#include "NotGate.hpp"
 #include <iostream>
 #include <vector>
 
@@ -16,6 +18,10 @@ int main()
     gates.push_back(light);
     Gate* andgate = new AndGate();
     gates.push_back(andgate);
+    Gate* ORgate = new ORGate();
+    gates.push_back(ORgate);
+    Gate* Notgate = new NotGate();
+    gates.push_back(Notgate);
 
     while (window.isOpen())
     {

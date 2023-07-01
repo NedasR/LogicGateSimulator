@@ -24,6 +24,8 @@
     <ClCompile Include="GateDrawable.cpp" />
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="NotGate.cpp" />
+    <ClCompile Include="ORGate.cpp" />
     <ClCompile Include="Pin.cpp" />
     <ClCompile Include="Switch.cpp" />
     <ClCompile Include="Utils.cpp" />
@@ -34,6 +36,8 @@
     <ClInclude Include="Gate.hpp" />
     <ClInclude Include="GateDrawable.hpp" />
     <ClInclude Include="Light.hpp" />
+    <ClInclude Include="NotGate.hpp" />
+    <ClInclude Include="ORGate.hpp" />
     <ClInclude Include="Pin.hpp" />
     <ClInclude Include="Switch.hpp" />
     <ClInclude Include="Utils.hpp" />
