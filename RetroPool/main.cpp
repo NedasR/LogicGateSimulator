@@ -48,7 +48,8 @@ int main()
                            //std::cout << "nullptr" << std::endl;
                         }
                         else {
-                            a->Switchclicked(event.mouseButton);\
+                            a->Switchclicked(event.mouseButton);
+                            std::cout << a->state << std::endl;
                             /*
                             
                             Pin::head = &a->output;
@@ -81,10 +82,34 @@ int main()
             Pin::head->nextpin->state = Pin::head->state;
         }*/
 
+        for (Gate* gate : gates)
+        {
+
+            Switch* a = dynamic_cast<Switch*>(gate);
+            if (a == nullptr) {
+            }
+            else {
+                
+                
+            }
+        }
+
+        for (Gate* gate : gates)
+        {
+
+            Light* a = dynamic_cast<Light*>(gate);
+            if (a == nullptr) {
+            }
+            else {
+                a->LightPowerd();
+            }
+        }
+    
 
         window.clear();
         for (Gate* gate : gates) 
         {
+            gate->notifey();
             gate->lineUpdate();
             gate->drawGate(window);
         }

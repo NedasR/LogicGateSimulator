@@ -1,7 +1,5 @@
 #include "Pin.hpp"
 #include "GateDrawable.hpp"
-#include <iostream>
-#include <cmath>
 Pin* Pin::head;
 
 Pin::Pin()
@@ -14,18 +12,14 @@ void Pin::UpdateState(bool& State)
 	state = State;
 	if (nextpin != nullptr)
 	{
-		nextpin->UpdateState(State);
+		nextpin->state = State;
+		//nextpin->UpdateState(State);
 	}
 }
 
 void Pin::updateLoc(sf::RectangleShape& pinDraw)
 {
 	Loc = pinDraw.getPosition();
-}
-
-float  Pin::calculateAngle(sf::Vector2f& origin, sf::Vector2f& target)
-{
-	return std::atan2f(origin.y - target.y, origin.x - target.x) * (180.f / PI) + 90;
 }
 
 float  Pin::calculateLineDist(sf::Vector2f& origin, sf::Vector2f& target)

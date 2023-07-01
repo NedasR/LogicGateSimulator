@@ -8,18 +8,19 @@ Light::Light()
 	shape.GatePos(Loc);
 	shape.Gatesize();
 	shape.GateColor();
-	shape.GateTexture("assets/LightBulb.png", sf::IntRect(64, 0, 64, 64));
+	shape.GateTexture("assets/LightBulb.png", sf::IntRect(0, 0, 64, 64));
 	inputAdraw.Pinsize(shape.getGateSize().x / 6.8, shape.getGateSize().y / 6.8);
 	inputAdraw.PinPos(Loc.x + (shape.getGateSize().x / 2) - inputAdraw.getPinSize().x / 2, Loc.y + shape.getGateSize().y);
 	inputAdraw.PinColor();
 	state = false;
+	inputA.state = false;
 	inputA.hookedpin = this;
 	inputA.type = Pintype::Input;
 }
 
 void Light::notifey()
 {
-	inputA.UpdateState(state);
+	state = inputA.state;
 }
 
 void Light::drawGate(sf::RenderWindow& window)
@@ -33,11 +34,9 @@ void Light::LightPowerd()
 {
 	if (state) {
 		shape.GateTexture("assets/LightBulb.png", sf::IntRect(0, 0, 64, 64));
-		state = true;
 	}
 	else {
 		shape.GateTexture("assets/LightBulb.png", sf::IntRect(64, 0, 64, 64));
-		state = false;
 	}
 }
 

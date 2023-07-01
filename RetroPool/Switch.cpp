@@ -1,4 +1,5 @@
 #include "Switch.hpp"
+#include "Utils.hpp"
 Switch::Switch()
 {
 	Loc.x = 400;
@@ -84,11 +85,10 @@ void Switch::lineUpdate()
 							output.Loc.y + pinOut.getPinSize().x / 2);
 	if (output.nextpin == nullptr)
 	{
-
 	}
 	else
 	{
-		float angle = output.calculateAngle(output.Loc, output.nextpin->Loc);
+		float angle = Utils::calculateAngle(output.Loc, output.nextpin->Loc);
 		float lineLength = output.calculateLineDist(output.Loc, output.nextpin->Loc);
 		pinOut.Line.setRotation(angle);
 		pinOut.Line.setSize(sf::Vector2f(4,lineLength+2));
