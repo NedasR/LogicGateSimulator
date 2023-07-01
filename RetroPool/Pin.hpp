@@ -1,6 +1,7 @@
 #pragma once
 #include "Gate.hpp"
-#define PI 3.14
+#include <iostream>
+#include <cmath>
 enum class Pintype
 {
 	Input,
@@ -9,7 +10,7 @@ enum class Pintype
 
 struct Pin
 {
-	static Pin* head;
+	static Pin* s_head;
 
 	bool state;
 
@@ -26,10 +27,6 @@ struct Pin
 	void UpdateState(bool& State);
 
 	void updateLoc(sf::RectangleShape& pinDraw);
-
-	float calculateAngle(sf::Vector2f& origin, sf::Vector2f& target);
-
-	float  calculateLineDist(sf::Vector2f& origin, sf::Vector2f& target);
 
 	static void onclick(Pin* pin);
 };

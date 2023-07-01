@@ -25,19 +25,15 @@ void Light::notifey()
 
 void Light::drawGate(sf::RenderWindow& window)
 {
-	window.draw(shape.GateShape);
-	window.draw(shape.text);
-	window.draw(inputAdraw.Pinshape);
-}
-
-void Light::LightPowerd()
-{
 	if (state) {
 		shape.GateTexture("assets/LightBulb.png", sf::IntRect(0, 0, 64, 64));
 	}
 	else {
 		shape.GateTexture("assets/LightBulb.png", sf::IntRect(64, 0, 64, 64));
 	}
+	window.draw(shape.GateShape);
+	window.draw(shape.text);
+	window.draw(inputAdraw.Pinshape);
 }
 
 void Light::moveupdate(sf::Vector2f pos)

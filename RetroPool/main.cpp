@@ -1,7 +1,9 @@
 #include <SFML/Graphics.hpp>
 #include "AllhppFiles.hpp"
+#include "AndGate.hpp"
 #include <iostream>
 #include <vector>
+
 
 int main()
 {
@@ -12,6 +14,8 @@ int main()
     std::vector<Gate*> gates;
     Gate* light = new Light();
     gates.push_back(light);
+    Gate* andgate = new AndGate();
+    gates.push_back(andgate);
 
     while (window.isOpen())
     {
@@ -31,7 +35,7 @@ int main()
             }
             if (event.type == sf::Event::MouseButtonPressed)
             {
-                if (event.mouseButton.button == sf::Mouse::Left)
+                if (event.mouseButton.button == sf::Mouse::Right)
                     
                 {
                     sf::Vector2f mouse(event.mouseButton.x, event.mouseButton.y);
@@ -49,7 +53,6 @@ int main()
                         }
                         else {
                             a->Switchclicked(event.mouseButton);
-                            std::cout << a->state << std::endl;
                             /*
                             
                             Pin::head = &a->output;
@@ -101,7 +104,6 @@ int main()
             if (a == nullptr) {
             }
             else {
-                a->LightPowerd();
             }
         }
     

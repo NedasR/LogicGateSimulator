@@ -80,7 +80,7 @@ bool GateDrawable::isHeld(sf::Vector2f pos)
 PinDrawable::PinDrawable()
 {
 	Line.setSize(sf::Vector2f(LINE_WIDTH, LINE_WIDTH));
-	Line.setOrigin(sf::Vector2f(LINE_WIDTH / 2, LINE_WIDTH));
+	Line.setOrigin(sf::Vector2f(LINE_WIDTH / 2, 0));
 }
 
 

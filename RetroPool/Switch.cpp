@@ -19,11 +19,13 @@ Switch::Switch()
 
 void Switch::Switchclicked(const sf::Event::MouseButtonEvent& mouseEvent)
 {
+	
 	sf::Vector2f gate_size = shape.getGateSize();
+	/*
 	sf::FloatRect gatesize(0, 0, 0, 0);
 	if (gatesize.contains(0, 0)) {
 
-	}
+	}*/
 	if (Loc.x < mouseEvent.x &&
 		Loc.x + gate_size.x > mouseEvent.x &&
 		Loc.y < mouseEvent.y &&
@@ -81,7 +83,7 @@ void Switch::clickupdate(sf::Vector2f pos)
 void Switch::lineUpdate()
 {
 	output.updateLoc(pinOut.Pinshape);
-	pinOut.Line.setPosition(output.Loc.x + pinOut.getPinSize().x / 2 + pinOut.Line.getSize().x / 2,
+	pinOut.Line.setPosition(output.Loc.x + pinOut.getPinSize().x / 2,
 							output.Loc.y + pinOut.getPinSize().x / 2);
 	if (output.nextpin == nullptr)
 	{
@@ -89,9 +91,9 @@ void Switch::lineUpdate()
 	else
 	{
 		float angle = Utils::calculateAngle(output.Loc, output.nextpin->Loc);
-		float lineLength = output.calculateLineDist(output.Loc, output.nextpin->Loc);
+		float lineLength = Utils::calculateLineDist(output.Loc, output.nextpin->Loc);
 		pinOut.Line.setRotation(angle);
-		pinOut.Line.setSize(sf::Vector2f(4,lineLength+2));
+		pinOut.Line.setSize(sf::Vector2f(4,lineLength));
 		pinOut.Line.setFillColor(sf::Color::White);
 	}
 }

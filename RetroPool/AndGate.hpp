@@ -3,18 +3,23 @@
 #include "Pin.hpp"
 #include "GateDrawable.hpp"
 #include <SFML/Graphics.hpp>
-class Light : public Gate
+#include "Utils.hpp"
+class AndGate : public Gate
 {
 	sf::Vector2f Loc;
 	GateDrawable shape;
 	PinDrawable inputAdraw;
+	PinDrawable inputBdraw;
+	PinDrawable pinOut;
 
 public:
-	
+
 	bool state;
 	Pin inputA;
+	Pin inputB;
+	Pin output;
 
-	Light();
+	AndGate();
 
 	void notifey();
 

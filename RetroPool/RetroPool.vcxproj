@@ -19,20 +19,24 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AndGate.cpp" />
     <ClCompile Include="Gate.cpp" />
     <ClCompile Include="GateDrawable.cpp" />
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Pin.cpp" />
     <ClCompile Include="Switch.cpp" />
+    <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AllhppFiles.hpp" />
+    <ClInclude Include="AndGate.hpp" />
     <ClInclude Include="Gate.hpp" />
     <ClInclude Include="GateDrawable.hpp" />
     <ClInclude Include="Light.hpp" />
     <ClInclude Include="Pin.hpp" />
     <ClInclude Include="Switch.hpp" />
+    <ClInclude Include="Utils.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
