@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <iostream>
-#define GATE_SIZEs 40.f
+#define GATE_SIZEs 80.f
 #define LINE_WIDTH 4
 class GateDrawable
 {

@@ -27,12 +27,11 @@
     <ClCompile Include="NotGate.cpp" />
     <ClCompile Include="ORGate.cpp" />
     <ClCompile Include="Pin.cpp" />
-    <ClCompile Include="Splittercpp.cpp" />
+    <ClCompile Include="Splitter.cpp" />
     <ClCompile Include="Switch.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AllhppFiles.hpp" />
     <ClInclude Include="AndGate.hpp" />
     <ClInclude Include="Gate.hpp" />
     <ClInclude Include="GateDrawable.hpp" />

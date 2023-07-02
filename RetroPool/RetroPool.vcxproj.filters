@@ -48,7 +48,7 @@
     <ClCompile Include="NotGate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Splittercpp.cpp">
+    <ClCompile Include="Splitter.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -57,9 +57,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Pin.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AllhppFiles.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GateDrawable.hpp">

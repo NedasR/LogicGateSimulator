@@ -1,8 +1,13 @@
 #include <SFML/Graphics.hpp>
-#include "AllhppFiles.hpp"
+#include "Gate.hpp"
+#include "Pin.hpp"
+#include "Switch.hpp"
+#include "Light.hpp"
+#include "GateDrawable.hpp"
 #include "AndGate.hpp"
 #include "ORGate.hpp"
 #include "NotGate.hpp"
+#include "Spliter.hpp"
 #include <iostream>
 #include <vector>
 
@@ -16,6 +21,8 @@ int main()
     std::vector<Gate*> gates;
     Gate* light = new Light();
     gates.push_back(light);
+    Gate* ligh1t = new Light();
+    gates.push_back(ligh1t);
     Gate* andgate = new AndGate();
     gates.push_back(andgate);
     Gate* ORgate = new ORGate();
@@ -26,6 +33,10 @@ int main()
     gates.push_back(N1otgate);
     Gate* Notgate = new NotGate();
     gates.push_back(Notgate);
+    Gate* sotgate = new Spliter();
+    gates.push_back(sotgate);
+    Gate* totgate = new Spliter();
+    gates.push_back(totgate);
 
     while (window.isOpen())
     {
@@ -133,7 +144,6 @@ int main()
 /*
 TO DO LIST
 ////////
-disconnects
 spliter gate
 gate spawner keys from 1 to 6
 ////////
