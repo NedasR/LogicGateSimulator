@@ -60,3 +60,8 @@ void Light::lineUpdate()
 {
 	inputA.updateLoc(inputAdraw.Pinshape);
 }
+
+void Light::disconnectUpdate(sf::Vector2f pos)
+{
+
+}

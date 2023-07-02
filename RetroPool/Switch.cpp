@@ -98,3 +98,11 @@ void Switch::lineUpdate()
 		pinOut.Line.setFillColor(sf::Color::White);
 	}
 }
+
+void Switch::disconnectUpdate(sf::Vector2f pos)
+{
+	if (pinOut.isClicked(pos))
+	{
+		output.disconnect();
+	}
+}

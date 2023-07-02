@@ -83,3 +83,11 @@ void NotGate::lineUpdate()
 		pinOut.Line.setFillColor(sf::Color::White);
 	}
 }
+
+void NotGate::disconnectUpdate(sf::Vector2f pos)
+{
+	if (pinOut.isClicked(pos))
+	{
+		output.disconnect();
+	}
+}

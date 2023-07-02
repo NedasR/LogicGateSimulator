@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Gates">
+      <UniqueIdentifier>{f6358a73-6b42-448d-ba22-5acc5500edba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -45,6 +48,9 @@
     <ClCompile Include="NotGate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Splittercpp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Gate.hpp">
@@ -53,29 +59,32 @@
     <ClInclude Include="Pin.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Switch.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="AllhppFiles.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GateDrawable.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Light.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Utils.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AndGate.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ORGate.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Gates</Filter>
     </ClInclude>
     <ClInclude Include="NotGate.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Gates</Filter>
+    </ClInclude>
+    <ClInclude Include="ORGate.hpp">
+      <Filter>Header Files\Gates</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.hpp">
+      <Filter>Header Files\Gates</Filter>
+    </ClInclude>
+    <ClInclude Include="Switch.hpp">
+      <Filter>Header Files\Gates</Filter>
+    </ClInclude>
+    <ClInclude Include="Spliter.hpp">
+      <Filter>Header Files\Gates</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

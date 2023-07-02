@@ -42,3 +42,11 @@ void Pin::updateLoc(sf::RectangleShape& pinDraw)
 	 }
 
 }
+
+void Pin::disconnect()
+{
+	if (this->nextpin != nullptr)
+	{
+		this->nextpin = nullptr;
+	}
+}

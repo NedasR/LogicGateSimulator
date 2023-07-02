@@ -102,3 +102,11 @@ void AndGate::lineUpdate()
 		pinOut.Line.setFillColor(sf::Color::White);
 	}
 }
+
+void AndGate::disconnectUpdate(sf::Vector2f pos)
+{
+	if (pinOut.isClicked(pos))
+	{
+		output.disconnect();
+	}
+}

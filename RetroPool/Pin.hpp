@@ -29,5 +29,7 @@ struct Pin
 	void updateLoc(sf::RectangleShape& pinDraw);
 
 	static void onclick(Pin* pin);
+
+	void disconnect();
 };
 

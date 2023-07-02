@@ -100,4 +100,12 @@ void ORGate::lineUpdate()
 		pinOut.Line.setSize(sf::Vector2f(4, lineLength + 2));
 		pinOut.Line.setFillColor(sf::Color::White);
 	}
-};
+}
+
+void ORGate::disconnectUpdate(sf::Vector2f pos)
+{
+	if (pinOut.isClicked(pos))
+	{
+		output.disconnect();
+	}
+}

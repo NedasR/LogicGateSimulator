@@ -25,4 +25,6 @@ public:
 	void clickupdate(sf::Vector2f pos);
 
 	void lineUpdate();
+
+	void disconnectUpdate(sf::Vector2f pos);
 };

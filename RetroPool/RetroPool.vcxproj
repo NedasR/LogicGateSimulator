@@ -27,6 +27,7 @@
     <ClCompile Include="NotGate.cpp" />
     <ClCompile Include="ORGate.cpp" />
     <ClCompile Include="Pin.cpp" />
+    <ClCompile Include="Splittercpp.cpp" />
     <ClCompile Include="Switch.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
@@ -39,6 +40,7 @@
     <ClInclude Include="NotGate.hpp" />
     <ClInclude Include="ORGate.hpp" />
     <ClInclude Include="Pin.hpp" />
+    <ClInclude Include="Spliter.hpp" />
     <ClInclude Include="Switch.hpp" />
     <ClInclude Include="Utils.hpp" />
   </ItemGroup>
