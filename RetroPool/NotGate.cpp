@@ -5,7 +5,7 @@ NotGate::NotGate() {
 	inputA.state = false;
 	output.type = Pintype::Output;
 	inputA.type = Pintype::Input;
-	Loc.x = 800;
+	Loc.x = 600;
 	Loc.y = 600;
 	shape.GatePos(Loc);
 	shape.Gatesize();

@@ -8,7 +8,7 @@ ORGate::ORGate()
 	output.type = Pintype::Output;
 	inputA.type = Pintype::Input;
 	inputB.type = Pintype::Input;
-	Loc.x = 600;
+	Loc.x = 700;
 	Loc.y = 600;
 	shape.GatePos(Loc);
 	shape.Gatesize();

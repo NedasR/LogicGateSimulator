@@ -2,8 +2,8 @@
 #include "Utils.hpp"
 Switch::Switch()
 {
-	Loc.x = 400;
-	Loc.y = 400;
+	Loc.x = 900;
+	Loc.y = 600;
 	shape.GatePos(Loc);
 	shape.Gatesize();
 	shape.GateColor();

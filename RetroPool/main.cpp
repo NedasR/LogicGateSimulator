@@ -15,28 +15,7 @@
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(1200, 800), "Coffie's game");
-    bool filp, held;
-    filp = held = false;
-    int objectcount = 0;
     std::vector<Gate*> gates;
-    Gate* light = new Light();
-    gates.push_back(light);
-    Gate* ligh1t = new Light();
-    gates.push_back(ligh1t);
-    Gate* andgate = new AndGate();
-    gates.push_back(andgate);
-    Gate* ORgate = new ORGate();
-    gates.push_back(ORgate);
-    Gate* O1Rgate = new ORGate();
-    gates.push_back(O1Rgate);
-    Gate* N1otgate = new NotGate();
-    gates.push_back(N1otgate);
-    Gate* Notgate = new NotGate();
-    gates.push_back(Notgate);
-    Gate* sotgate = new Spliter();
-    gates.push_back(sotgate);
-    Gate* totgate = new Spliter();
-    gates.push_back(totgate);
 
     while (window.isOpen())
     {
@@ -47,11 +26,35 @@ int main()
                 window.close();
             if (event.type == sf::Event::KeyPressed)
             {
-                if (event.key.code == sf::Keyboard::S)
+                if (event.key.code == sf::Keyboard::Num1)
                 {
                     Gate* Switchptr = new Switch();
-                    //Switchptr->move(std::rand()%1200-40,std::rand()%800-40);
                     gates.push_back(Switchptr);
+                }
+                if (event.key.code == sf::Keyboard::Num2)
+                {
+                    Gate* Lightptr = new Light();
+                    gates.push_back(Lightptr);
+                }
+                if (event.key.code == sf::Keyboard::Num3)
+                {
+                    Gate* Spliterptr = new Spliter();
+                    gates.push_back(Spliterptr);
+                }
+                if (event.key.code == sf::Keyboard::Num4)
+                {
+                    Gate* NotGateptr = new NotGate();
+                    gates.push_back(NotGateptr);
+                }
+                if (event.key.code == sf::Keyboard::Num5)
+                {
+                    Gate* AndGateptr = new AndGate();
+                    gates.push_back(AndGateptr);
+                }
+                if (event.key.code == sf::Keyboard::Num6)
+                {
+                    Gate* ORGateptr = new ORGate();
+                    gates.push_back(ORGateptr);
                 }
             }
             if (event.type == sf::Event::MouseButtonPressed)
@@ -64,20 +67,11 @@ int main()
                     {
                         gate->clickupdate(sf::Vector2f(event.mouseButton.x, event.mouseButton.y));
                         
-
-
-
-                        //Switch* a = (Switch*)gate;
                         Switch* a = dynamic_cast<Switch*>(gate);
                         if (a == nullptr) {
-                           //std::cout << "nullptr" << std::endl;
                         }
                         else {
                             a->Switchclicked(event.mouseButton);
-                            /*
-                            Pin::head = &a->output;
-                            Pin::head->state = a->state;
-                            */
                         }
 
                     }
@@ -93,41 +87,8 @@ int main()
             else if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
                 gate->moveupdate(static_cast<sf::Vector2f>(sf::Mouse::getPosition(window)));
                 gate->disconnectUpdate(static_cast<sf::Vector2f>(sf::Mouse::getPosition(window)));
-                /*
-                if (Pin::head != nullptr) {
-                    Pin::head->nextpin = &Lights->inputA;
-                    Lights->state = Pin::head->nextpin->state;
-                }*/
             }
         }
-        /*
-        if (Pin::head != nullptr) {
-            Pin::head->nextpin->state = Pin::head->state;
-
-        }*/
-
-        for (Gate* gate : gates)
-        {
-
-            Switch* a = dynamic_cast<Switch*>(gate);
-            if (a == nullptr) {
-            }
-            else {
-                
-                
-            }
-        }
-
-        for (Gate* gate : gates)
-        {
-
-            Light* a = dynamic_cast<Light*>(gate);
-            if (a == nullptr) {
-            }
-            else {
-            }
-        }
-    
 
         window.clear();
         for (Gate* gate : gates) 
@@ -140,12 +101,3 @@ int main()
     }
     return 0;
 }
-
-/*
-TO DO LIST
-////////
-spliter gate
-gate spawner keys from 1 to 6
-////////
-
-*/

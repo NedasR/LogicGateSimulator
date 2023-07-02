@@ -3,8 +3,8 @@
 Light::Light() 
 {
 	shape.Gatesize();
-	Loc.x = 800;
-	Loc.y = 400;
+	Loc.x = 500;
+	Loc.y = 600;
 	shape.GatePos(Loc);
 	shape.Gatesize();
 	shape.GateColor();

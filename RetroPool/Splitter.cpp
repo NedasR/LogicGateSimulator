@@ -8,7 +8,7 @@ Spliter::Spliter()
 	output2.type = Pintype::Output;
 	output3.type = Pintype::Output;
 	inputA.type = Pintype::Input;
-	Loc.x = 900;
+	Loc.x = 800;
 	Loc.y = 600;
 	shape.GatePos(Loc);
 	shape.Gatesize();
