@@ -20,11 +20,7 @@ void Switch::Switchclicked(const sf::Event::MouseButtonEvent& mouseEvent)
 {
 	
 	sf::Vector2f gate_size = shape.getGateSize();
-	/*
-	sf::FloatRect gatesize(0, 0, 0, 0);
-	if (gatesize.contains(0, 0)) {
 
-	}*/
 	if (Loc.x < mouseEvent.x &&
 		Loc.x + gate_size.x > mouseEvent.x &&
 		Loc.y < mouseEvent.y &&
