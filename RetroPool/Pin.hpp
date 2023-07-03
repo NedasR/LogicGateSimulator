@@ -20,8 +20,6 @@ struct Pin
 
 	Pin * nextpin;
 
-	Gate * hookedpin;
-
 	Pin();
 
 	void UpdateState(bool& State);

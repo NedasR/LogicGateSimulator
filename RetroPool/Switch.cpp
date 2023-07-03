@@ -13,7 +13,6 @@ Switch::Switch()
 	pinOut.PinPos(Loc.x + (shape.getGateSize().x / 2 ) - pinOut.getPinSize().x / 2 , Loc.y - pinOut.getPinSize().y);
 	pinOut.PinColor();
 	state = false;
-	output.hookedpin = this;
 	output.type = Pintype::Output;
 }
 

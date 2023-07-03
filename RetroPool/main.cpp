@@ -16,7 +16,13 @@ int main()
 {
     sf::RenderWindow window(sf::VideoMode(1200, 800), "Coffie's game");
     std::vector<Gate*> gates;
-
+    sf::Text spawntext;
+    sf::Font font;
+    font.loadFromFile("assets/arial.ttf");
+    spawntext.setFont(font);
+    spawntext.setCharacterSize(16);
+    spawntext.setString("1.Switch,2.Light,3.Spliter,4.NotGate,5.AndGate,6.ORgate");
+    spawntext.setPosition(window.getSize().x / 2 - spawntext.getGlobalBounds().width / 2, window.getSize().y - spawntext.getGlobalBounds().height);
     while (window.isOpen())
     {
         sf::Event event;
@@ -97,6 +103,7 @@ int main()
             gate->lineUpdate();
             gate->drawGate(window);
         }
+        window.draw(spawntext);
         window.display();
     }
     return 0;

@@ -14,7 +14,6 @@ Light::Light()
 	inputAdraw.PinColor();
 	state = false;
 	inputA.state = false;
-	inputA.hookedpin = this;
 	inputA.type = Pintype::Input;
 }
 
