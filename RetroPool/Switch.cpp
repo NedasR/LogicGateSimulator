@@ -31,6 +31,7 @@ void Switch::Switchclicked(const sf::Event::MouseButtonEvent& mouseEvent)
 			state = true;
 			output.state = true;
 
+
 		}
 		else {
 			state = false;
